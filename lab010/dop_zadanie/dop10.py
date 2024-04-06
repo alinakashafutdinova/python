@@ -1,26 +1,23 @@
 import random
 
-timeList = ["Сегодня", "Завтра", "Очень скоро"]
-eventList = ["вы встретите", "с вами случится", "вы найдёте"]
-objectList = ["что-то волшебное", "необычный инцидент", "большой сюрприз"]
+# Заготовленные ответы для каждого из трех вопросов
+answers = [
+    ["да", "нет", "не знаю"],
+    ["нужно подумать", "определенно да", "неправильно"],
+    ["Москва", "Дубай", "Таганрог"]
+]
 
-while True:
-    zodiac_sign = input("Введите знак Зодиака: ").capitalize()  # Приводим первую букву к верхнему регистру
+# Функция для голосового помощника
+def voice_assistant():
+    for i in range(3):
+        question = input("Задайте вопрос: ")
+        if i == 0:
+            answer = random.choice(answers[0])
+        elif i == 1:
+            answer = random.choice(answers[1])
+        else:
+            answer = random.choice(answers[2])
+            
+        print("Ответ:", answer)
 
-    # Проверка корректности введенного знака Зодиака
-    valid_zodiac_signs = ["Овен", "Телец", "Близнецы", "Рак", "Лев", "Дева", "Весы", "Скорпион", "Стрелец", "Козерог", "Водолей", "Рыбы"]
-    if zodiac_sign not in valid_zodiac_signs:
-        print("Пожалуйста, введите корректный знак Зодиака.")
-        continue  # Переходим на следующую итерацию цикла
-
-    time = timeList[random.randint(0, len(timeList) - 1)]
-    event = eventList[random.randint(0, len(eventList) - 1)]
-    obj = objectList[random.randint(0, len(objectList) - 1)]
-
-    print(time + " " + event + " " + obj)
-
-    next_input = input("Хотите попробовать ещё раз? (да/нет): ")
-    if next_input.lower() != "да":
-        break
-
-print("Приходите ещё за новыми предсказаниями!")
+voice_assistant()
