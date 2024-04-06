@@ -1,21 +1,11 @@
 import turtle
-
-# Запрашиваем у пользователя длину стороны квадрата
 side_length = int(input("Введите длину стороны квадрата: "))
-
-# Инициализация черепашки
 t = turtle.Turtle()
-t.speed(0)  # Настраиваем скорость черепашки
-
-# Перемещаем черепашку к центру экрана перед началом рисования
+t.speed(0) 
 t.penup()
-t.goto(-side_length/2, -side_length/2)  # Отходим от центра на половину длины стороны
+t.goto(-side_length/2, -side_length/2) 
 t.pendown()
-
-# Рисуем квадрат
 for _ in range(4):
     t.forward(side_length)
     t.right(90)
-
-# Завершаем программу при клике на экран
 turtle.done()
