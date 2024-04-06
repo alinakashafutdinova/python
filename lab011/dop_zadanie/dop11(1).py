@@ -3,8 +3,7 @@ side_length = int(input("Введите длину стороны квадрат
 t = turtle.Turtle()
 t.speed(0) 
 t.penup()
-t.setx(-side_length/2)
-t.sety(-side_length/2)
+t.goto(-side_length/2, -side_length/2) 
 t.pendown()
 for _ in range(4):
     t.forward(side_length)
