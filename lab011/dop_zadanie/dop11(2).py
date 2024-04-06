@@ -1,4 +1,5 @@
 from turtle import *
+shape("turtle")
 colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
 showturtle() 
 speed(10)
