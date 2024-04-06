@@ -1,7 +1,7 @@
 import turtle
 side_length = int(input("Введите длину стороны квадрата: "))
 t = turtle.Turtle()
-t.speed(0) 
+t.speed(10) 
 t.penup()
 t.goto(-side_length/2, -side_length/2) 
 t.pendown()
