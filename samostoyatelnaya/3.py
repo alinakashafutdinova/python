@@ -1,11 +1,8 @@
-def calculate_candy_price():
-    mass = float(input("Введите массу конфет в граммах: "))
-    
-    if mass > 2000:
-        price = 200 * (mass / 1000)
-    else:
-        price = 250 * (mass / 1000)
-    
-    print(f"Цена конфет составит {price} рублей.")
+massa = float(input("Введи массу конфет в граммах: ")) 
 
-calculate_candy_price()
+if massa > 2000: 
+    chena = massa / 1000 * 200 
+    print(f"200 руб за 1 кг, Итого: {chena} руб") 
+else: 
+    chena = massa / 1000 * 250 
+    print(f"250 руб за 1 кг, Итого: {chena} руб")
