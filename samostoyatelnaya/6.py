@@ -1,25 +1,24 @@
 import turtle
 
+# Получаем радиус первого круга от пользователя
 radius = float(input("Введите радиус первого круга (синего): "))
 
+# Создаем экран и черепашку
+screen = turtle.Screen()
 t = turtle.Turtle()
 
-# Рисуем синий круг с указанным радиусом
-t.color("blue")
-t.penup()
-t.goto(0, 0)
-t.pendown()
-t.circle(radius)
+# Выбираем скорость рисования
+t.speed(15)
+# Рисуем синий круг без заливки (только контур)
 
-colors = ["red", "green", "orange", "purple"]
-
-# Рисуем остальные круги с разными цветами
-for i in range(1, 5):
+# Рисуем остальные круги вокруг первого круга без заливки
+colors = ["blue", "red", "green", "orange", "purple", "yellow"]
+for i in range(1, 6):
     t.penup()
-    t.goto(0, -radius*(i+0.5))
+    t.goto(0, -radius * (i + 1))
     t.pendown()
-    t.color(colors[i-1])
-    t.circle(radius * (i+1))
+    t.pencolor(colors[i-1])
+    t.circle(radius * (i + 1), None, 100)  # None используется для не заливки круга
 
-turtle.done()
-
+# Закрываем черепашку по клику
+screen.exitonclick()
